@@ -1,12 +1,14 @@
 
+
 export class TestUtils{
     public clear(){
         cy.wait(1000)
-        cy.get('.todo').should(() => {}).then($todos => {
-            if(!$todos.length){
+        cy.get('[data-cy="todo"]').should('have.length.gte', 0).then(todos=> {
+            if(!todos.length){
+                cy.log("nothing to delete")
                 return
             }
-            cy.wrap($todos).find('[data-cy="delete"]').click({force: true, multiple: true})
+            cy.wrap(todos).find('[data-cy="delete"]').should(() => {}).click({force: true, multiple: true})
         })
         cy.get('.todo').should('have.length', 0)
     }
