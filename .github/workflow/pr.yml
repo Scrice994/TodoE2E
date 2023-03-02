@@ -1,6 +1,7 @@
-on: 
-  repository_dispatch:
-    types: [server-start]
+on:
+  push:
+    repository_dispatch:
+      types: [server-start]
 
 jobs:
   commit:
