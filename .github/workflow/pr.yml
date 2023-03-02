@@ -4,7 +4,6 @@ on:
     types: my-event
 jobs:
   build:
-    name: run-workflow
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
