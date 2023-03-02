@@ -3,11 +3,11 @@ on:
   repository_dispatch:
     types: [my-event]
 jobs:
-  prova:
+  build:
     name: run-workflow
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: print trigger details
