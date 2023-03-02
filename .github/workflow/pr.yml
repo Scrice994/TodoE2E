@@ -1,7 +1,7 @@
 name: run the e2e
 on:
   repository_dispatch:
-    types: [my-event]
+    types: my-event
 jobs:
   build:
     name: run-workflow
