@@ -14,5 +14,5 @@ When("User refresh the app", () => {
 });
 
 Then("The new todo should be in the screen", () => {
-  cy.get(".todo").should("exist");
+  cy.get('[data-cy="todo"]').should("exist");
 });

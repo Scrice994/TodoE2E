@@ -14,5 +14,5 @@ When("User click on the todo trash-button on right", () => {
 });
 
 Then("The todo should disappear from the screen", () => {
-  cy.get(".todo").should("not.exist");
+  cy.get('[data-cy="todo"]').should("not.exist");
 });

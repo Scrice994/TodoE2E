@@ -23,7 +23,7 @@ When("user click Create task! button", () => {
 Then(
   "a todo with text {string} should be in the screen",
   (todoText: string) => {
-    cy.get('.todo').should('have.text', todoText);
+    cy.get('[data-cy="todo"]').should('have.text', todoText);
   }
 );
 

@@ -10,9 +10,10 @@ Given("Start with an existing Todo", function () {
 });
 
 When("User click on the todo left button", () => {
-  cy.get(".checkbox").click();
+  cy.get('[data-cy="check-btn"]').click();
 });
 
 Then("Checked state should appear in the todo left button", () => {
   cy.get('[data-cy="check"]').should("be.visible");
+  cy.get('[data-cy="check-background"]').should("be.visible");
 });
