@@ -1,5 +1,5 @@
 name: run the e2e
-on: [repository_dispatch]
+on: [workflow_call]
 jobs:
   build:
     runs-on: ubuntu-latest
