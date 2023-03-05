@@ -1,17 +1,21 @@
 name: run the e2e
 on:
-  repository_dispatch:
+  workflow_dispatch:
     types: my-event
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
+      steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          fetch-depth: 0
-      - name: print trigger details
-        run: |
-          echo ${{ github.event.client_payload.github.action }}
-          echo ${{ github.event.client_payload.github.actor }}
+          node-version: 16
+
+      - name: npm-ci
+        run: npm ci
+
+      - name: e2e-tests
+        run: npm test
+
 
         
