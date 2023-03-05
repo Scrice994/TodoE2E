@@ -11,8 +11,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: echo
-        run: echo "sono il workflow E2E"
+      - name: install dependencies
+        run: npm ci
+      
+      - name: run tests
+        run: npm test
 
 
 
