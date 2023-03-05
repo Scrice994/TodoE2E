@@ -1,0 +1,21 @@
+# name: run the e2e
+# on:
+#   workflow_dispatch:
+#     types: my-event
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#       steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: 16
+
+#       - name: npm-ci
+#         run: npm ci
+
+#       - name: e2e-tests
+#         run: npm test
+
+
+        
