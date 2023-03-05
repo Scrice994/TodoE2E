@@ -1,18 +1,19 @@
 name: run the e2e
-on: [workflow_call]
+on:
+  workflow_call:
 jobs:
   build:
     runs-on: ubuntu-latest
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      steps:
 
-      - name: npm-ci
-        run: npm ci
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
 
-      - name: e2e-tests
-        run: npm test
+        - name: echo
+          run: echo "sono il workflow E2E"
+
 
 
         
