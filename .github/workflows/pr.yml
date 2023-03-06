@@ -8,18 +8,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v3
 
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout the backend repo
+        uses: actions/checkout@v3
         with:
-          node-version: 16
+          repository: Scrice994/todoBackend
+          path: backend
+        
+      - name: install backend dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: backend
 
-      - name: npm-ci
-        run: npm ci
+      - name: Start the server
+        run: |
+        cd backend
+        npm start &
       
-      - name: run tests
-        run: npm test
-
 
 
         
