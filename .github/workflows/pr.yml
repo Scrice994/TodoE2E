@@ -23,7 +23,9 @@ jobs:
           working-directory: backend
 
       - name: Start the server
-        run: npm start &
+        run: |
+        echo ${{ github.workspace }}
+        npm start &
       
 
 
