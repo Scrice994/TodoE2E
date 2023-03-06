@@ -24,8 +24,8 @@ jobs:
 
       - name: Start the server
         run: |
-        echo "Peppino"
-        npm start &
+          echo "Peppino"
+          npm start &
       
 
 
