@@ -11,6 +11,9 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v3
 
+      - name: install e2e dependencies
+        run: npm ci
+
       - name: Checkout the backend repo
         uses: actions/checkout@v3
         with:
@@ -30,7 +33,26 @@ jobs:
           cd backend
           npm run build
           npm start &
-      
+
+      - name: Checkout the frontend repo
+        uses: actions/checkout@v3
+        with:
+          repository: Scrice994@/todoFrontend
+          path: frontend
+
+      - name: intall frontend dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: frontend
+
+      - name: start the app
+        run: |
+          cd frontend
+          npm start &
+
+      - name: e2e tests
+        run: npm test
+        
 
 
         
