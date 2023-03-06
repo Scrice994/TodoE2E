@@ -21,17 +21,14 @@ jobs:
         uses: bahmutov/npm-install@v1
         with:
           working-directory: backend
-
-      - name: build the backend
-        run: | 
-          cd backend
-          npm run build
       
       - name: Start MongoDB 6.0
         uses: supercharge/mongodb-github-action@1.9.0
 
       - name: Start the server
         run: |
+          cd backend
+          npm run build
           npm start &
       
 
