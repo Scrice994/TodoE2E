@@ -23,8 +23,7 @@ jobs:
           working-directory: backend
 
       - name: Start the server
-        run: |
-        npm start &
+        run: npm start &
       
 
 
