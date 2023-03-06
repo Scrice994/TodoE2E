@@ -25,6 +25,7 @@ jobs:
       - name: Start the server
         run: |
           cd backend
+          npm run build
           npm start &
       
 
