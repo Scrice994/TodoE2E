@@ -24,7 +24,7 @@ jobs:
 
       - name: Start the server
         run: |
-          echo "Peppino"
+          cd backend
           npm start &
       
 
