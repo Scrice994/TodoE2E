@@ -24,7 +24,7 @@ jobs:
 
       - name: Start the server
         run: |
-        echo ${{ github.workspace }}
+        echo "Peppino"
         npm start &
       
 
