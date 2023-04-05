@@ -1,7 +1,6 @@
-
-
 export class TestUtils{
-    public clear(){
+
+    clearTodos(){
         cy.wait(1000)
         cy.get('[data-cy="todo"]').should('have.length.gte', 0).then(todos=> {
             if(!todos.length){
@@ -13,7 +12,14 @@ export class TestUtils{
         cy.get('.todo').should('have.length', 0)
     }
 
-    public todoSample(string: string){
+    createUserAndLogin(){
+        cy.request('POST', 'http://localhost:3005/user/signup', {username: 'testUser123', password: 'testPassword123'})
+        .then((res) => {
+          window.localStorage.setItem('user', JSON.stringify(res.body.token))
+        })
+    }
+
+    todoSample(string: string){
         cy.wait(1000)
         cy.get('[data-cy="+"]').click()
         cy.get('[data-cy="text-input"]').type(string)

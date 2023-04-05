@@ -1,11 +1,11 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { TestUtils } from "../testUtils";
 
-const E2Eutils = new TestUtils();
+const E2ETestUtils = new TestUtils();
 
 Given("user is on the app page", function () {
+  E2ETestUtils.createUserAndLogin()
   cy.visit("/");
-  E2Eutils.clear();
 });
 
 When("user type Enter", () => {

@@ -1,12 +1,12 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { TestUtils } from "../testUtils";
 
-const E2Eutils = new TestUtils();
+const E2ETestUtils = new TestUtils();
 
 Given("User Add new todo", function () {
+  E2ETestUtils.createUserAndLogin()
   cy.visit("/");
-  E2Eutils.clear();
-  E2Eutils.todoSample("TodoSample");
+  E2ETestUtils.todoSample("TodoSample");
 });
 
 When("User refresh the app", () => {

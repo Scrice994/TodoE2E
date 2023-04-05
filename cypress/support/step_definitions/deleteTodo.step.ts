@@ -1,12 +1,12 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { TestUtils } from "../testUtils";
 
-const E2Eutils = new TestUtils();
+const E2ETestUtils = new TestUtils();
 
 Given("Must start with an existing Todo", function () {
+  E2ETestUtils.createUserAndLogin()
   cy.visit("/");
-  E2Eutils.clear();
-  E2Eutils.todoSample("TodoSample");
+  E2ETestUtils.todoSample("TodoSample");
 });
 
 When("User click on the todo trash-button on right", () => {

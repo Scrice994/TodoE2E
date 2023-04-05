@@ -23,6 +23,7 @@
       "experimentalDecorators": true,
       "strictPropertyInitialization": false,
       "esModuleInterop": true,
+      "noEmit": false,
       "typeRoots": [
           "./node_modules/@types"
       ]
