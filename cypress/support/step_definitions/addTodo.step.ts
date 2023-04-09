@@ -17,7 +17,7 @@ When("User click on create task! button with a empty input field", () => {
 })
 
 Then("a rep paragraph saying: {string} should display below the input field", (label: string) => {
-  cy.get('[data-cy="empty-input-msg"]').should("have.text", label)
+  cy.get('[data-cy="newTodo-error"]').should("have.text", label)
 })
 
 Then("todolist must be empty", () => {
