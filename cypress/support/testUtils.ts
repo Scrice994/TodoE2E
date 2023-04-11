@@ -13,7 +13,7 @@ export class TestUtils{
     }
 
     createUserAndLogin(){
-        cy.request('POST', 'http://localhost:3005/user/signup', {username: 'testUser123', password: 'testPassword123'})
+        cy.request('POST', 'http://localhost:3005/user/signup', {username: 'testUser123', password: 'testPassword123', confirmPassword: 'testPassword123'})
         .then((res) => {
           window.localStorage.setItem('user', JSON.stringify(res.body.token))
         })

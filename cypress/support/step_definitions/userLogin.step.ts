@@ -24,7 +24,7 @@ Then("a error message on top should display", () => {
 })
 
 When("user fill the form with username {string} password {string} and click login btn", (username: string, password: string) => {
-    cy.request('POST', 'http://localhost:3005/user/signup', {username: 'testUser123', password: 'testPassword123'})
+    cy.request('POST', 'http://localhost:3005/user/signup', {username: 'testUser123', password: 'testPassword123', confirmPassword: 'testPassword123'})
     cy.get('[data-cy="login-username"]').type(username)
     cy.get('[data-cy="login-password"]').type(password)
     cy.get('[data-cy="login-btn"]').click()       

@@ -20,6 +20,7 @@ export default defineConfig({
           const findCollection = await database.listCollections().toArray();
   
           findCollection.map(col => col.name).forEach(async colName => await database.dropCollection(colName))
+
           return null
         }
       })
